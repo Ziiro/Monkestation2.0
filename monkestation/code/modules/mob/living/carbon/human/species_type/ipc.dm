@@ -176,7 +176,7 @@
 
 /datum/action/innate/change_screen/Activate()
 	var/screen_choice = tgui_input_list(usr, "Which screen do you want to use?", "Screen Change", GLOB.ipc_screens_list)
-	var/color_choice = tgui_color_picker(usr, "Which color do you want your screen to be", "Color Change") as null | color
+	var/color_choice = tgui_color_picker(usr, "Which color do you want your screen to be", "Color Change") as null|color
 	if(!screen_choice)
 		return
 	if(!color_choice)
