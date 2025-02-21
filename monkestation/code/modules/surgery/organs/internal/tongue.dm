@@ -55,6 +55,9 @@
 	attack_verb_continuous = list("beeps", "boops")
 	attack_verb_simple = list("beep", "boop")
 	modifies_speech = TRUE
+	liked_foodtypes = NONE
+	disliked_foodtypes = NONE
+	toxic_foodtypes = NONE
 	taste_sensitivity = 25 // not as good as an organic tongue
 	maxHealth = 100 //RoboTongue!
 	zone = BODY_ZONE_PRECISE_MOUTH
