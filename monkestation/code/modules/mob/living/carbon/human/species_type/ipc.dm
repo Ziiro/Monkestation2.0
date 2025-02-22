@@ -45,7 +45,7 @@
 
 	species_language_holder = /datum/language_holder/synthetic
 
-	mutantbrain = /obj/item/organ/internal/brain/synth
+	mutantbrain = /obj/item/organ/internal/brain/mmi_holder/posibrain
 	mutantstomach = /obj/item/organ/internal/stomach/synth
 	mutantears = /obj/item/organ/internal/ears/synth
 	mutanttongue = /obj/item/organ/internal/tongue/synth

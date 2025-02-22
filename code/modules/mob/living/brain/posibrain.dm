@@ -39,6 +39,8 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 	var/searching = FALSE
 	///List of all ckeys who has already entered this posibrain once before.
 	var/list/ckeys_entered = list()
+	///Does this posibrain ping ghosts on creation? MONKESTATION EDIT
+	var/autoping = TRUE
 
 ///Notify ghosts that the posibrain is up for grabs
 /obj/item/mmi/posibrain/proc/ping_ghosts(msg, newlymade)
@@ -218,3 +220,11 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 
 /obj/item/mmi/posibrain/add_mmi_overlay()
 	return
+
+// MONKE STATION ADDITION START
+
+/obj/item/mmi/posibrain/ipc/Initialize
+	desc = "A cube of shining metal, four inches to a side and covered in shallow grooves. It has an IPC serial number engraved on the top."
+	autoping = FALSE
+
+// MONKE STATION ADDITION END

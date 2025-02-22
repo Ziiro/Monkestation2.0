@@ -8348,6 +8348,7 @@
 #include "monkestation\code\modules\surgery\organs\external\tail\clockworktail.dm"
 #include "monkestation\code\modules\surgery\organs\external\wings\functional_wings.dm"
 #include "monkestation\code\modules\surgery\organs\internal\brain.dm"
+#include "monkestation\code\modules\surgery\organs\internal\brain_item.dm"
 #include "monkestation\code\modules\surgery\organs\internal\butts.dm"
 #include "monkestation\code\modules\surgery\organs\internal\ears.dm"
 #include "monkestation\code\modules\surgery\organs\internal\eyes.dm"
