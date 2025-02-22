@@ -1,12 +1,10 @@
-
-// IPC brain fuckery. This is for using normal Posibrain objects as an IPC Posibrain.
-
+// IPC brain stuff. This is for using normal Posibrain objects as an IPC Posibrain.
 /obj/item/organ/internal/brain/mmi_holder
-	name = "implanted MMI brain"
+	name = "implanted MMI brain" // ignore the fact that, for the moment, this base type is not used. maybe some day.
 	slot = ORGAN_SLOT_BRAIN
 	zone = BODY_ZONE_CHEST
 	status = ORGAN_ROBOTIC
-	var/remove_on_qdel = FALSE
+	var/remove_on_qdel = FALSE // The actual "organ" deletes itself on removal, because it's just a holder.
 	var/obj/item/mmi/stored_mmi
 	var/mmi_type = /obj/item/mmi/
 
