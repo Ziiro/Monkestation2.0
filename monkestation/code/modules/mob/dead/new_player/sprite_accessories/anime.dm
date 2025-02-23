@@ -185,3 +185,8 @@
 	name = "Plug"
 	icon_state = "plug"
 	hasinner = TRUE
+
+/datum/sprite_accessory/anime_bottom/plug2
+	name = "Alternate Plug"
+	icon_state = "plug2"
+	hasinner = TRUE
