@@ -96,7 +96,7 @@
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_MEDICAL
 
-	/datum/design/ipc_core
+/datum/design/ipc_core
 	name = "IPC Core"
 	desc = "An incomplete IPC chassis; add organs, limbs, and a compact positronic brain to build your own IPC."
 	id = "ipc_core"
