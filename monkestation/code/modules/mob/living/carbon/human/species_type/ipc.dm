@@ -155,9 +155,10 @@
  * * screen_name - The name of the screen to switch the ipc_screen mutant bodypart to. Defaults to BSOD.
  */
 /datum/species/ipc/proc/bsod_death(mob/living/carbon/human/transformer, screen_name = "BSOD")
-	saved_screen = change_screen // remember the old screen in case of revival
-	switch_to_screen(transformer, screen_name)
-	addtimer(CALLBACK(src, PROC_REF(switch_to_screen), transformer, "Blank"), 5 SECONDS)
+	if(transformer.head)
+		saved_screen = change_screen // remember the old screen in case of revival
+		switch_to_screen(transformer, screen_name)
+		addtimer(CALLBACK(src, PROC_REF(switch_to_screen), transformer, "Blank"), 5 SECONDS)
 
 
 /datum/species/ipc/on_species_loss(mob/living/carbon/C)
@@ -177,18 +178,22 @@
 	button_icon_state = "drone_vision"
 
 /datum/action/innate/change_screen/Activate()
-	var/screen_choice = tgui_input_list(usr, "Which screen do you want to use?", "Screen Change", GLOB.ipc_screens_list)
-	var/color_choice = tgui_color_picker(usr, "Which color do you want your screen to be", "Color Change")
-	if(!screen_choice)
-		return
-	if(!color_choice)
-		return
-	if(!ishuman(owner))
-		return
 	var/mob/living/carbon/human/H = owner
-	H.dna.features["ipc_screen"] = screen_choice
-	H.eye_color_left = sanitize_hexcolor(color_choice)
-	H.update_body()
+	if(!H.get_bodypart(BODY_ZONE_HEAD))
+		to_chat(owner, span_warning("No monitor detected. Please check your connections and try again."))
+		return
+	else
+		var/screen_choice = tgui_input_list(usr, "Which screen do you want to use?", "Screen Change", GLOB.ipc_screens_list)
+		var/color_choice = tgui_color_picker(usr, "Which color do you want your screen to be", "Color Change")
+		if(!screen_choice)
+			return
+		if(!color_choice)
+			return
+		if(!ishuman(owner))
+			return
+		H.dna.features["ipc_screen"] = screen_choice
+		H.eye_color_left = sanitize_hexcolor(color_choice)
+		H.update_body()
 
 /datum/species/ipc/spec_revival(mob/living/carbon/human/H)
 	H.notify_ghost_cloning("You have been repaired!")
