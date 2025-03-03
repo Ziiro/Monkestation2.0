@@ -198,8 +198,9 @@
 /datum/species/ipc/spec_revival(mob/living/carbon/human/H)
 	H.notify_ghost_cloning("You have been repaired!")
 	H.grab_ghost()
-	H.dna.features["ipc_screen"] = "BSOD"
-	H.update_body()
+	if(H.get_bodypart(BODY_ZONE_HEAD))
+		H.dna.features["ipc_screen"] = "BSOD"
+		H.update_body()
 	playsound(H, 'monkestation/sound/voice/dialup.ogg', 25)
 	H.say("Reactivating [pick("core systems", "central subroutines", "key functions")]...")
 	sleep(3 SECONDS)
@@ -214,10 +215,11 @@
 	if(H.stat == DEAD)
 		return
 	H.say("Unit [H.real_name] is fully functional. Have a nice day.")
-	switch_to_screen(H, "Console")
-	addtimer(CALLBACK(src, PROC_REF(switch_to_screen), H, saved_screen), 5 SECONDS)
+	if(H.get_bodypart(BODY_ZONE_HEAD))
+		switch_to_screen(H, "Console")
+		addtimer(CALLBACK(src, PROC_REF(switch_to_screen), H, saved_screen), 5 SECONDS)
+		H.visible_message(span_notice("[H]'s [change_screen ? "monitor lights up" : "eyes flicker to life"]!"), span_notice("All systems nominal. You're back online!"))
 	playsound(H.loc, 'sound/machines/chime.ogg', 50, TRUE)
-	H.visible_message(span_notice("[H]'s [change_screen ? "monitor lights up" : "eyes flicker to life"]!"), span_notice("All systems nominal. You're back online!"))
 	return
 
 /datum/species/ipc/replace_body(mob/living/carbon/C, datum/species/new_species)

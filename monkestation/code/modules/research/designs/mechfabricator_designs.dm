@@ -98,7 +98,7 @@
 
 /datum/design/ipc_core
 	name = "IPC Core"
-	desc = "An incomplete IPC chassis; add organs, limbs, and a compact positronic brain to build your own IPC."
+	desc = "An incomplete IPC chassis; add organs, limbs, and a compact positronic brain to build your own robotic friend. Will need to be rebooted by via the Positronic Reboot procedure once all organs and limbs are added."
 	id = "ipc_core"
 	build_type = MECHFAB
 	build_path = /obj/item/ipc_core

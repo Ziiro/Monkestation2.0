@@ -23,6 +23,8 @@
 	ipc_body.facial_hairstyle = null
 	ipc_body.hairstyle = null
 	ipc_body.dna.features["ipc_screen"] = null
+	/// Add oxygen damage so the body needs to be revived by a reboot.
+	ipc_body.adjustOxyLoss(80, FALSE)
 	/// Null deathsound and emote ability
 	ipc_body.death_sound = null
 	ADD_TRAIT(ipc_body, TRAIT_EMOTEMUTE, type)
