@@ -16,6 +16,8 @@
 	/// Remove those organs
 	for (var/obj/item/organ/internal/organs in ipc_body.organs)
 		qdel(organs)
+	/// We have to manually blind it, because qdel'ing the eyes doesn't trigger the organ loss proc tha blinds.
+	ipc_body.become_blind(NO_EYES)
 	/// Remove clothes, facial hair, features.
 	ipc_body.undershirt = null
 	ipc_body.underwear = null
@@ -23,8 +25,6 @@
 	ipc_body.facial_hairstyle = null
 	ipc_body.hairstyle = null
 	ipc_body.dna.features["ipc_screen"] = null
-	/// Add oxygen damage so the body needs to be revived by a reboot.
-	ipc_body.adjustOxyLoss(80, FALSE)
 	/// Null deathsound and emote ability
 	ipc_body.death_sound = null
 	ADD_TRAIT(ipc_body, TRAIT_EMOTEMUTE, type)
