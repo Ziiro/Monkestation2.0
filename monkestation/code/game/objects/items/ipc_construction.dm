@@ -7,7 +7,7 @@
 
 /obj/item/ipc_core/Initialize(mapload)
 	. = ..()
-	var/mob/living/carbon/human/species/ipc/ipc_body = new /mob/living/carbon/human/species/ipc(get_turf(src))
+	var/mob/living/carbon/human/species/ipc/ipc_body = new(get_turf(src))
 	/// Remove those bodyparts
 	for(var/ipc_body_parts in ipc_body.bodyparts)
 		var/obj/item/bodypart/bodypart = ipc_body_parts

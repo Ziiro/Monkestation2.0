@@ -201,6 +201,7 @@
 	if(H.stat == DEAD)
 		return
 	H.notify_ghost_cloning("You have been repaired!")
+	H.grab_ghost()
 	if(H.get_bodypart(BODY_ZONE_HEAD))
 		H.dna.features["ipc_screen"] = "BSOD"
 		H.update_body()
@@ -223,6 +224,7 @@
 		addtimer(CALLBACK(src, PROC_REF(switch_to_screen), H, saved_screen), 5 SECONDS)
 		H.visible_message(span_notice("[H]'s [change_screen ? "monitor lights up" : "eyes flicker to life"]!"), span_notice("All systems nominal. You're back online!"))
 	playsound(H.loc, 'sound/machines/chime.ogg', 50, TRUE)
+	return
 
 /datum/species/ipc/replace_body(mob/living/carbon/C, datum/species/new_species)
 	..()
