@@ -68,7 +68,7 @@
 	research_icon_state = "surgery_chest"
 
 /datum/design/surgery/robot_toxheal
-	name = "Clear Corrosive Buildup(Toxic)"
+	name = "Clear Corrosive Buildup(Toxin Damage)"
 	desc = "A procedure that removes corrosion and chemical buildup on mechanical components inside of a deactivated synthetic chassis."
 	surgery = /datum/surgery/robot_tox_clean
 	id = "surgery_heal_robot_toxin"
