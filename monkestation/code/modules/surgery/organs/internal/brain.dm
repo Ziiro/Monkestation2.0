@@ -438,7 +438,11 @@
 	var/mob/living/carbon/human/user_human = brain_owner
 	if(HAS_TRAIT(user_human, TRAIT_REVIVES_BY_HEALING) && user_human.health > SYNTH_BRAIN_WAKE_THRESHOLD)
 		if(!HAS_TRAIT(user_human, TRAIT_DEFIB_BLACKLISTED))
-			user_human.revive(FALSE)
+			user_human.visible_message(span_warning("[user_human]'s 'POSITRONIC REBOOT REQUIRED' indicator begins blinking green."))
+			playsound(user_human.loc, 'sound/machines/ding.ogg', 50, TRUE)
+		else
+			user_human.visible_message(span_warning("[user_human]'s 'PERSONAL MATRIX CORRUPTED' indicator turns on and remains a steady red..."))
+			playsound(user_human.loc, 'sound/machines/buzz-two.ogg', 50, TRUE)
 
 /obj/item/organ/internal/brain/synth/emp_act(severity) // EMP act against the posi, keep the cap far below the organ health
 	. = ..()

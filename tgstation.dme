@@ -8329,6 +8329,8 @@
 #include "monkestation\code\modules\surgery\robot_brain_healing.dm"
 #include "monkestation\code\modules\surgery\robot_chest_repair.dm"
 #include "monkestation\code\modules\surgery\robot_healing.dm"
+#include "monkestation\code\modules\surgery\robot_oxy_clean.dm"
+#include "monkestation\code\modules\surgery\robot_tox_clean.dm"
 #include "monkestation\code\modules\surgery\steps.dm"
 #include "monkestation\code\modules\surgery\advanced\brainwashing.dm"
 #include "monkestation\code\modules\surgery\advanced\dna_recovery.dm"
