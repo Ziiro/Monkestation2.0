@@ -423,7 +423,7 @@
 	zone = BODY_ZONE_CHEST
 	organ_flags = ORGAN_ROBOTIC | ORGAN_SYNTHETIC_FROM_SPECIES | ORGAN_VITAL
 	maxHealth = 2 * STANDARD_ORGAN_THRESHOLD
-	desc = "A cube of shining metal, four inches to a side and covered in shallow grooves. It has an IPC serial number engraved on the top. It is usually slotted into the chest of synthetic crewmembers."
+	desc = "A cube of shining metal, four inches to a side and covered in shallow grooves. It has an IPC serial number engraved on the top. It is usually slotted into the chest of synthetic crewmembers. It is not compatible with standard Posibrain/MMI interfaces, and must be placed into an MMI to be made compatible." // to inform the user that this is, in fact, not a real posibrain, but is an organ posibrain.
 	icon = 'monkestation/code/modules/smithing/icons/ipc_organ.dmi'
 	icon_state = "posibrain-ipc"
 	/// The last time (in ticks) a message about brain damage was sent. Don't touch.
@@ -438,11 +438,7 @@
 	var/mob/living/carbon/human/user_human = brain_owner
 	if(HAS_TRAIT(user_human, TRAIT_REVIVES_BY_HEALING) && user_human.health > SYNTH_BRAIN_WAKE_THRESHOLD)
 		if(!HAS_TRAIT(user_human, TRAIT_DEFIB_BLACKLISTED))
-			user_human.visible_message(span_warning("[user_human]'s 'POSITRONIC REBOOT REQUIRED' indicator begins blinking green."))
-			playsound(user_human.loc, 'sound/machines/ding.ogg', 50, TRUE)
-		else
-			user_human.visible_message(span_warning("[user_human]'s 'PERSONAL MATRIX CORRUPTED' indicator turns on and remains a steady red..."))
-			playsound(user_human.loc, 'sound/machines/buzz-two.ogg', 50, TRUE)
+			user_human.revive(FALSE)
 
 /obj/item/organ/internal/brain/synth/emp_act(severity) // EMP act against the posi, keep the cap far below the organ health
 	. = ..()
