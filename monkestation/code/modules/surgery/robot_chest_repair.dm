@@ -107,7 +107,7 @@
 		return TRUE
 	else
 		target.emote("buzz")
-		target.visible_message(span_warning("...[target] convulses, then goes offline. They appear too damaged to reboot.")) // ...Otherwise, they need more repair.
+		target.visible_message(span_warning("...[target] convulses, then goes offline. [target.p_They()] appear too damaged to reboot.")) // ...Otherwise, they need more repair.
 		return FALSE
 
 /datum/surgery_step/finalize_positronic_restoration/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, fail_prob)
