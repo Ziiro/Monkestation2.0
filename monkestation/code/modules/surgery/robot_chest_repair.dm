@@ -95,7 +95,7 @@
 		target.visible_message(span_warning("...[target] does not respond. [target.p_Their()] personality matrix appears corrupted."))
 		return FALSE
 	if(target.stat < DEAD)
-		target.visible_message(span_notice("...[target] is completely unaffected! Seems like they're already active!"))
+		target.visible_message(span_notice("...[target] is completely unaffected! Seems like [target.p_theyre()] already active!"))
 		return FALSE
 	if(target.stat == DEAD && target.health > SYNTH_BRAIN_WAKE_THRESHOLD) // Only revive them if they are of structural integrity to be revived...
 		target.revive()
