@@ -92,7 +92,7 @@
 /datum/surgery_step/finalize_positronic_restoration/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(HAS_TRAIT(target, TRAIT_DEFIB_BLACKLISTED))
 		target.emote("buzz")
-		target.visible_message(span_warning("...[target] does not respond. Their personality matrix appears corrupted."))
+		target.visible_message(span_warning("...[target] does not respond. [target.p_Their()] personality matrix appears corrupted."))
 		return FALSE
 	if(target.stat < DEAD)
 		target.visible_message(span_notice("...[target] is completely unaffected! Seems like they're already active!"))
