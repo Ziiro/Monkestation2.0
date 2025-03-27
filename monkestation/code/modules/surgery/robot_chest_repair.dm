@@ -103,7 +103,7 @@
 		target.grab_ghost()
 		target.updatehealth()
 		target.emote("chime")
-		target.visible_message(span_notice("...[target] reactivates, their chassis coming online!"))
+		target.visible_message(span_notice("...[target] reactivates, [target.p_their()] chassis coming online!"))
 		return TRUE
 	else
 		target.emote("buzz")
