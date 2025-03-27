@@ -1,5 +1,5 @@
 /datum/surgery/robot_oxy_clean  // HI BILLY MAYS HERE WITH...
-	name = "Clean Components of Debris(Oxy Damage)"
+	name = "Clean Components of Debris (Repair Suffocation)"
 	requires_bodypart_type = BODYTYPE_ROBOTIC
 	surgery_flags = SURGERY_REQUIRE_LIMB
 	possible_locs = list(BODY_ZONE_CHEST)

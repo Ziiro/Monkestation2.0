@@ -1,5 +1,5 @@
 /datum/surgery/robot_tox_clean
-	name = "Clear Corrosive Buildup(Toxin)"
+	name = "Clear Corrosive Buildup (Repair Toxins)"
 	requires_bodypart_type = BODYTYPE_ROBOTIC
 	surgery_flags = SURGERY_REQUIRE_LIMB
 	possible_locs = list(BODY_ZONE_CHEST)
